@@ -40,7 +40,7 @@ for proj in ${PROJECTS[@]}
             mkdir $proj
 	    groupadd $proj
 	    chown :$proj $proj
-	    chmod -R 0770 $proj 
+	    chmod -R 2770 $proj 
        	       
             # Grant RW rights
             
