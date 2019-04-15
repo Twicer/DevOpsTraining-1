@@ -5,7 +5,7 @@
 # Homework #1: ACL Task   
 #
 # Author: Pereskokov Vladimir 
-#
+
 
 PROJECTS=(Proj1 Proj2 Proj3)
 DEVELOPERS=(R1 R2 R3 R4 R5)
