@@ -2,7 +2,7 @@
 #
 # DevOps training #7 2019 EPAM
 #
-# Homework #1.1: ACL Task   
+# Homework #1.1 
 #
 # Author: Pereskokov Vladimir 
 
