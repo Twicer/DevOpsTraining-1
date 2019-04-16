@@ -38,7 +38,7 @@ for proj in ${PROJECTS[@]}
             mkdir $proj
 	    groupadd $proj
 	    chown :$proj $proj
-	    chmod -R 2770 $proj 
+	    chmod -R 2770 $proj  # Create SGID bit 
        	       
             # Grant rights
             
