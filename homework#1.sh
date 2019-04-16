@@ -33,6 +33,7 @@ for user in ${ALLUSERS[@]}
 	    useradd -p $PASSWORD $user 
        done
 
+# Task 1. 
 # Create Projects dir
 for proj in ${PROJECTS[@]}
        do
@@ -54,7 +55,7 @@ for proj in ${PROJECTS[@]}
 		for u in ${PROJ1R[@]}
 		do	
 	            setfacl -R -m u:$u:r-x $proj
-                done		    
+                done		
                 ;;
             proj2)
 	        # RW rights by Group	    
@@ -72,7 +73,7 @@ for proj in ${PROJECTS[@]}
 		# RW rights by Group   
                 for u in ${PROJ3RW[@]}
                 do
-                adduser $u $proj
+                    adduser $u $proj
                 done
 		# R rights by ACL
 		for u in ${PROJ3R[@]}
@@ -83,5 +84,12 @@ for proj in ${PROJECTS[@]}
            esac
 
        done
+
+# Task 2.
+# Rights for Infomanagers
+#for u in ${INFOMANAGERS[@]}
+#do
+#	setfacl -R -m u:$u:rwx /projects/proj3
+#done
 
 exit 0
