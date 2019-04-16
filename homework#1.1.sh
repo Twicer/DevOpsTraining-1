@@ -2,7 +2,7 @@
 #
 # DevOps training #7 2019 EPAM
 #
-# Homework #1: ACL Task   
+# Homework #1.1: ACL Task   
 #
 # Author: Pereskokov Vladimir 
 
@@ -10,9 +10,7 @@
 PROJECTS=(proj1 proj2 proj3) 
 DEVELOPERS=(r1 r2 r3 r4 r5)   
 ANALYTICS=(a1 a2 a3 a4)
-INFOMANAGERS=(i1 i2 i3)
-ALLUSERS=( ${DEVELOPERS[@]} ${ANALYTICS[@]} ${INFOMANAGERS[@]} )
-PASSWORD="1234"
+ALLUSERS=( ${DEVELOPERS[@]} ${ANALYTICS[@]} )
 
 # Users with RW rights
 PROJ1RW=(r2 r3 r5 a1)
@@ -24,16 +22,16 @@ PROJ1R=(a4)
 PROJ2R=(a2 a3)
 PROJ3R=(a1 a4)
 
+# Directory for All Projects
 mkdir /projects
 cd /projects
 
 # Create All users
 for user in ${ALLUSERS[@]}
        do
-	    useradd -p $PASSWORD $user 
+	    useradd $user 
        done
 
-# Task 1. 
 # Create Projects dir
 for proj in ${PROJECTS[@]}
        do
@@ -84,12 +82,5 @@ for proj in ${PROJECTS[@]}
            esac
 
        done
-
-# Task 2.
-# Rights for Infomanagers
-#for u in ${INFOMANAGERS[@]}
-#do
-#	setfacl -R -m u:$u:rwx /projects/proj3
-#done
 
 exit 0
