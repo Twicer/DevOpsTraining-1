@@ -42,26 +42,44 @@ for proj in ${PROJECTS[@]}
 	    chown :$proj $proj
 	    chmod -R 2770 $proj 
        	       
-            # Grant RW rights
+            # Grant rights
             
             case $proj in
             proj1)
+		# RW rights
 	        for u in ${PROJ1RW[@]}
 	        do		
-                adduser $u $proj
+                    adduser $u $proj
 	        done
+		# R rights
+		for u in ${PROJ1R[@]}
+		do	
+	            setfacl -R -m u:$u:r-x $proj
+                done		    
                 ;;
-            proj2)      
+            proj2)
+	        # RW rights	    
                 for u in ${PROJ2RW[@]}
                 do
-                adduser $u $proj
+                    adduser $u $proj
                 done
+		# R rights
+                for u in ${PROJ2R[@]}
+		do
+		    setfacl -R -m u:$u:r-x $proj
+	        done	    
                 ;;
             proj3)
+		# RW rights    
                 for u in ${PROJ3RW[@]}
                 do
                 adduser $u $proj
                 done
+		# R rights
+		for u in ${PROJ3R[@]}
+		do
+	            setfacl -R -m u:$u:r-x $proj
+		done	
                 ;; 
            esac
 
