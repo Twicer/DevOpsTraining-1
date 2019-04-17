@@ -47,7 +47,7 @@ for proj in ${PROJECTS[@]}
 		# RW rights by Group
 	        for u in ${PROJ1RW[@]}
 	        do		
-                    adduser $u $proj
+                    usermod -aG $proj $u
 	        done
 		# R rights by ACL
 		for u in ${PROJ1R[@]}
@@ -59,7 +59,7 @@ for proj in ${PROJECTS[@]}
 	        # RW rights by Group	    
                 for u in ${PROJ2RW[@]}
                 do
-                    adduser $u $proj
+                    usermod -aG $proj $u
                 done
 		# R rights by ACL
                 for u in ${PROJ2R[@]}
@@ -71,7 +71,7 @@ for proj in ${PROJECTS[@]}
 		# RW rights by Group   
                 for u in ${PROJ3RW[@]}
                 do
-                    adduser $u $proj
+                    usermod -aG $proj $u
                 done
 		# R rights by ACL
 		for u in ${PROJ3R[@]}

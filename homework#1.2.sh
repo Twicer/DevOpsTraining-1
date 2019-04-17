@@ -32,7 +32,7 @@ for proj in ${PROJECTS[@]}
             # Grant rights for Infomanagers
             for u in ${INFOMANAGERS[@]}
             do
-	    adduser $u $proj
+	    usermod -aG $proj $u
             done
      done
 
