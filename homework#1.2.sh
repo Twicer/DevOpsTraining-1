@@ -22,7 +22,7 @@ done
 
 # Create Projects dir
 for proj in ${PROJECTS[@]} 
-do
+     do
             mkdir $proj
 	    groupadd $proj
 	    chown :$proj $proj
@@ -34,6 +34,6 @@ do
             do
 	    adduser $u $proj
             done
-done
+     done
 
 exit 0
