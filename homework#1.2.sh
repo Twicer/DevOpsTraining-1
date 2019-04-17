@@ -2,7 +2,7 @@
 #
 # DevOps training #7 2019 EPAM
 #
-# Homework #1.2: Sticky bit 
+# Homework #1.2
 #
 # Author: Pereskokov Vladimir 
 
@@ -24,15 +24,16 @@ done
 for proj in ${PROJECTS[@]} 
 do
             mkdir $proj
-	   #chown :$proj $proj
-	    chmod -R 5770 $proj 
-done
+	    groupadd $proj
+	    chown :$proj $proj
+	    chmod -R 3770 $proj # Create SGID & Sticky bits
 
-# Grant rights            
-# Rights for Infomanagers
-for u in ${INFOMANAGERS[@]}
-do
-	setfacl -R -m u:$u:rwx /projects
+
+            # Grant rights for Infomanagers
+            for u in ${INFOMANAGERS[@]}
+            do
+	    adduser $u $proj
+            done
 done
 
 exit 0
