@@ -1,9 +1,10 @@
 #!/usr/bin/awk -f
 #
+# DevOps training #7 2019 EPAM
 #
+# Homework #2.1 
 #
-#
-#  
+# Author: Pereskokov Vladimir
 
 {
  if ($0<=9) {
@@ -60,7 +61,7 @@ printf("     100:  %3d is %4s %.50s\n", k, int ((k/NR)*100)"%", makeStars(k))
 
 }
 
-# Drawing Histogram
+# Drawing Stars
 function makeStars(x){
         stars = ""
         symbol = "*"
