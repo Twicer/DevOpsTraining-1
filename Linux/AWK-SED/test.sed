@@ -8,104 +8,101 @@
 
 /^[0-9]$/ {
 #s/^.*$/*/g 
-w files/09
+w /tmp/09.sed
 s/.*//
 }
 /^1[0-9]$/ {
 #s/^.*$/*/g 
-w files/1019
+w /tmp/1019.sed
 s/.*//
 
 }
 /^2[0-9]$/ {
 #s/^.*$/*/g 
-w files/2029
+w /tmp/2029.sed
 s/.*//
 
 } 
 /^3[0-9]$/ {
 #s/^.*$/*/g
-w files/3039
+w /tmp/3039.sed
 s/.*//
 
 }
 /^4[0-9]$/ {
 #s/^.*$/*/g
-w files/4049
+w /tmp/4049.sed
 s/.*//
 
 }
 /^5[0-9]$/ {
 #s/^.*$/*/g
-w files/5059
+w /tmp/5059.sed
 s/.*//
 
 }
 /^6[0-9]$/ {
 #s/^.*$/*/g
-w files/6069
+w /tmp/6069.sed
 s/.*//
 
 }
 /^7[0-9]$/ {
 #s/^.*$/*/g
-w files/7079
+w /tmp/7079.sed
 
 s/.*//
 }
 /^8[0-9]$/ {
 #s/^.*$/*/g
-w files/8089
+w /tmp/8089.sed
 
 s/.*//
 }
 /^9[0-9]$/ {
 #s/^.*$/*/g
-w files/9099
+w /tmp/9099.sed
 s/.*//
 
 }
 /^[1-9][0-9][0-9]$/ {
 #s/^.*$/*/g
-w files/100
+w /tmp/100.sed
 s/.*//
 
 }
 #--------
 
 $ {
-
 i\
-Amount:
-
+Total:
 $=
 
-s/.*/echo HELLO/e
+s/.*/rm -f \/tmp\/temp.sed;cat \/tmp\/*.sed >> \/tmp\/temp.sed/e
 H
-s/.*/rm -f temp;cat files\/* >> temp/e
+s/.*/n=$(wc -l \/tmp\/09.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf " 0 -  9: %4d is %4s" "$n" "$p";/e
 H
-#s/.*/L=$(wc temp|cut -d ' ' -f 1);echo "by shell: "$L;/e
-s/.*/n=$(wc -l files\/09|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf " 0 -  9: %4d is %4s" "$n" "$p";/e
+s/.*/n=$(wc -l \/tmp\/1019.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "10 - 19: %4d is %4s" "$n" "$p";/e
 H
-s/.*/n=$(wc -l files\/1019|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "10 - 19: %4d is %4s" "$n" "$p";/e
+s/.*/n=$(wc -l \/tmp\/2029.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "20 - 29: %4d is %4s" "$n" "$p";/e
 H
-s/.*/n=$(wc -l files\/2029|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "20 - 29: %4d is %4s" "$n" "$p";/e
+s/.*/n=$(wc -l \/tmp\/3039.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "30 - 39: %4d is %4s" "$n" "$p";/e
 H
-s/.*/n=$(wc -l files\/3039|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "30 - 39: %4d is %4s" "$n" "$p";/e
+s/.*/n=$(wc -l \/tmp\/4049.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "40 - 49: %4d is %4s" "$n" "$p";/e
 H
-s/.*/n=$(wc -l files\/4049|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "40 - 49: %4d is %4s" "$n" "$p";/e
+s/.*/n=$(wc -l \/tmp\/5059.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "50 - 59: %4d is %4s" "$n" "$p";/e
 H
-s/.*/n=$(wc -l files\/5059|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "50 - 59: %4d is %4s" "$n" "$p";/e
+s/.*/n=$(wc -l \/tmp\/6069.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "60 - 69: %4d is %4s" "$n" "$p";/e
 H
-s/.*/n=$(wc -l files\/6069|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "60 - 69: %4d is %4s" "$n" "$p";/e
+s/.*/n=$(wc -l \/tmp\/7079.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "70 - 79: %4d is %4s" "$n" "$p";/e
 H
-s/.*/n=$(wc -l files\/7079|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "70 - 79: %4d is %4s" "$n" "$p";/e
+s/.*/n=$(wc -l \/tmp\/8089.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "80 - 89: %4d is %4s" "$n" "$p";/e
 H
-s/.*/n=$(wc -l files\/8089|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "80 - 89: %4d is %4s" "$n" "$p";/e
+s/.*/n=$(wc -l \/tmp\/9099.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "90 - 99: %4d is %4s" "$n" "$p";/e
 H
-s/.*/n=$(wc -l files\/9099|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "90 - 99: %4d is %4s" "$n" "$p";/e
+s/.*/n=$(wc -l \/tmp\/100.sed|cut -d ' ' -f 1);L=$(wc -l \/tmp\/temp.sed|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "    100: %4d is %4s\n" "$n" "$p";/e
 H
-s/.*/n=$(wc -l files\/100|cut -d ' ' -f 1);L=$(wc -l temp|cut -d ' ' -f 1);p=$((100*n\/L))"%";printf "    100: %4d is %4s\n" "$n" "$p";/e
+s/.*/rm -rf \/tmp\/*.sed/e
 H
 G
 }
