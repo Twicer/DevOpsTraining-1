@@ -46,8 +46,8 @@
 }	
 END {
 
-print " Amount: " NR	
-printf("  0 -  9:  %3d is %4s %.50s\n", a, int ((a/NR)*100)"%", makeStars(a))
+print " Total: " NR	
+printf("\n  0 -  9:  %3d is %4s %.50s\n", a, int ((a/NR)*100)"%", makeStars(a))
 printf(" 10 - 19:  %3d is %4s %.50s\n", b, int ((b/NR)*100)"%", makeStars(b))
 printf(" 20 -  9:  %3d is %4s %.50s\n", c, int ((c/NR)*100)"%", makeStars(c))
 printf(" 30 -  9:  %3d is %4s %.50s\n", d, int ((d/NR)*100)"%", makeStars(d))
